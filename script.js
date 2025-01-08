@@ -14,3 +14,15 @@ const boardStatus= (function(){
 const mek=document.getElementById("top-left");
 
 mek.textContent=boardStatus.topLeft;
+function resetBoard(){
+  boardStatus.topLeft="";
+  boardStatus.topCenter="";
+  boardStatus.topRight="";
+  boardStatus.middleLeft="";
+  boardStatus.middleCenter="";
+  boardStatus.middleRight="";
+  boardStatus.bottomLeft="";
+  boardStatus.bottomCenter="";
+  boardStatus.bottomRight="";
+};
+
