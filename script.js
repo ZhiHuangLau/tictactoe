@@ -4,12 +4,12 @@ const boardStatus= (function(){
   const topLeft="mek mek";
   const topCenter="";
   const topRight="";
-  const middleLeft="";
-  const middleCenter="";
-  const middleRight="";
+  const middleLeft="X";
+  const middleCenter="X";
+  const middleRight="X";
   const bottomLeft="";
   const bottomCenter="";
-  const bottomRight="";
+  const bottomRight="O";
   return {topLeft,topCenter,topRight,middleLeft,middleCenter,middleRight,bottomLeft,bottomCenter,bottomRight};
 })();
 
@@ -35,7 +35,28 @@ const boardFunctions=(function() {
     return(tempArr)
   })();
 
-  return {currentBoardState,smh};
+  const boardEval=(function(){
+    const winner=[0];
+    const lineValue=[smh[0]+smh[1]+smh[2],smh[3]+smh[4]+smh[5],
+    smh[6]+smh[7]+smh[8],smh[0]+smh[3]+smh[6],smh[1]+smh[4]+smh[7],
+    smh[2]+smh[5]+smh[8],smh[0]+smh[4]+smh[8],smh[2]+smh[4]+smh[6]];
+    for (let i = 0; i < lineValue.length; i++) {
+    
+      if (lineValue[i]=3) {
+        winner[0]++;
+        break
+      }else if (lineValue[i]){
+        winner[0]--;
+        break
+      }else{
+      
+      }}
+      return(lineValue,winner)
+  })();
+
+  
+
+  return {currentBoardState,smh,boardEval};
 })();
 
 const mek=document.getElementById("top-left");
